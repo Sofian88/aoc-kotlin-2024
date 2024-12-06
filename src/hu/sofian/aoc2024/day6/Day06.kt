@@ -23,8 +23,8 @@ fun main() {
                     }
                 }
                 input[column][row]
-            }
-        }
+    fun parseInput(input: List<String>): Array<BooleanArray> = Array(input.size) { columnIndex ->
+        BooleanArray(input[columnIndex].length) { input[columnIndex][it] == '#' }
     }
 
     tailrec fun visit(
