@@ -21,3 +21,14 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
  * The cleaner shorthand for printing output.
  */
 fun Any?.println() = println(this)
+
+operator fun Pair<Int, Int>.plus(second: Pair<Int, Int>) =
+    this.first + second.first to this.second + second.second
+
+operator fun Pair<Int, Int>.minus(second: Pair<Int, Int>) =
+    this.first - second.first to this.second - second.second
+
+
+operator fun Pair<Int, Int>.contains(value: Pair<Int, Int>) : Boolean{
+    return value.first in 0..this.first && value.second in 0..this.second
+}
