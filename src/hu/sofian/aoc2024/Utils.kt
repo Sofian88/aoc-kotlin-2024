@@ -32,3 +32,9 @@ operator fun Pair<Int, Int>.minus(second: Pair<Int, Int>) =
 operator fun Pair<Int, Int>.contains(value: Pair<Int, Int>) : Boolean{
     return value.first in 0..this.first && value.second in 0..this.second
 }
+
+fun <T> MutableList<T>.swap(index1: Int, index2: Int){
+    val tmp = this[index1]
+    this[index1] = this[index2]
+    this[index2] = tmp
+}
